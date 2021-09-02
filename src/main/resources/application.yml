@@ -1,0 +1,20 @@
+server:
+  port: 8006
+spring:
+  application:
+    name: generate-credit-card-application-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/cc_details
+    username: root
+    password: root
+  jpa:
+    generate-ddl: true
+    show-sql: false
+  cloud:
+    stream:
+      function:
+        definition: generateCreditCard
+      bindings:
+        generateCreditCard-in-0:
+          destination: CreditCardVerification
+          group: creditCard
