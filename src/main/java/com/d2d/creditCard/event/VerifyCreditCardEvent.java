@@ -11,10 +11,10 @@ import java.util.List;
 @Builder
 public class VerifyCreditCardEvent {
 
-    private VerifyCreditCardEvent.eventType event = VerifyCreditCardEvent.eventType.Approve_Credit_Card;
+    private VerifyCreditCardEvent.eventType event;
     private List<CreditCardVerificationStatus> creditCardVerificationStatus;
 
     enum eventType{
-        Approve_Credit_Card
+        VERIFY_Credit_Card
     }
 }
