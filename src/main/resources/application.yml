@@ -21,3 +21,8 @@ spring:
         generateCreditCard-in-0:
           destination: CreditCardVerification
           group: creditCard
+  rabbitmq:
+    host: ${RMQ_HOSTNAME:localhost}
+    port: ${RMQ_PORT:5672}
+    username: ${RMQ_USERNAME:guest}
+    password: ${RMQ_PASSWORD:guest}
