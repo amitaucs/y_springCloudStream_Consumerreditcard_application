@@ -4,9 +4,9 @@ spring:
   application:
     name: generate-credit-card-application-service
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/cc_details
-    username: root
-    password: root
+    url: jdbc:mysql://${MSQL_HOSTNAME:localhost}:${MSQL_PORT:3306}/${MSQL_DB_NAME:cc_details}
+    username: ${MSQL_USERNAME:root}
+    password: ${MSQL_PASSWORD:root}
   jpa:
     generate-ddl: true
     show-sql: false
