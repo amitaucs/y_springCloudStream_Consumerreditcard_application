@@ -23,6 +23,11 @@ spring:
           group: creditCard
           consumer:
             max-attempts: 1
+      rabbit:
+        bindings:
+          generateCreditCard-in-0:
+            consumer:
+              autoBindDlq: true
   rabbitmq:
     host: ${RMQ_HOSTNAME:localhost}
     port: ${RMQ_PORT:5672}
