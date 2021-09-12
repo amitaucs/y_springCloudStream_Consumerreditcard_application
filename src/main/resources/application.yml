@@ -8,6 +8,9 @@ spring:
     username: ${MSQL_USERNAME:root}
     password: ${MSQL_PASSWORD:root}
   jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
     generate-ddl: true
     show-sql: false
   cloud:
