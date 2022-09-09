@@ -15,6 +15,13 @@ spring:
     show-sql: false
   cloud:
     stream:
+      kafka:
+        binder:
+          brokers: ${KAFKA_BROKER_HOST:localhost}
+          defaultBrokerPort: ${KAFKA_BROKER_PORT:9092}
+          consumer-properties:
+            enableDlq: true
+            dlqName: creditCardConsumer_dlq
       function:
         definition: generateCreditCard
       bindings:
@@ -23,9 +30,4 @@ spring:
           group: creditCard
           consumer:
             max-attempts: 1
-      rabbit:
-        bindings:
-          generateCreditCard-in-0:
-            consumer:
-              autoBindDlq: true
 
